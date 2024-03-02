@@ -1,0 +1,5 @@
+php_flag opcache.enable Off
+RewriteEngine on
+RewriteRule ^public.*(\.css|\.js|\.jpg|\.jpeg|\.png|\.gif|\.ttf|\.woff|\.woff2|\.svg|\.txt) - [NC,L]
+RewriteCond %{REQUEST_URI} !-d
+RewriteRule ^.*$ index.php

@@ -1,0 +1,53 @@
+# Basic application settings
+application_settings :
+  SiteTitle : Bantingan33 # Site Title variable as default Page Title, set $pageTitle viewbag at controller to override
+  Controllers : app/controllers # Location of controllers file
+  Models : app/models # Location of models file
+  Views : app/views # Location of views file  
+  Module : modules # Location of general use class file
+  BaseUrl :  # Application base path, add if using virtual directory ex : https://domain.com/base, then add 'base'
+  DefaultController: Home # default controller
+  RedBeanPHP_Freeze : false  # RedbeanPHP freeze settings, set true to disable auto create table/columns
+  TempFolder : tmp/ # For storing temporary files, from upload or generate file for download, etc
+  SharedViewFolder : Shared/ # folder under views directory, for storing common html files or template html files
+  ErrorFileTemplate : error.html # HTML file to return when error occured must be in SharedViewFolder defined directory
+  Session_DB: true # Session data stored in DB
+  Language : en # Default Language file to use in language directory, to override, set l in querystings, ex: ?l=id, to load id.php as language file
+  # you can add also your settings here, and called it from php file by using APPLICATION_SETTINGS['yoursettings']
+
+# SMTP account settings for sending mail
+mail_settings :
+  CharSet : UTF-8		
+  IsSMTP : true
+  IsHTML : true
+  SMTPDebug : 0
+  SMTPHost : smtp.gmail.com
+  SMTPAuth : true   
+  SMTPUsername : your_gmail_account@gmail.com
+  SMTPPassword : your_gmail_password
+  SMTPSecure : tls
+  SMTPPort : 587
+  MailDefaultFromEmail : your_gmail_account@gmail.com
+  MailDefaultFromName : YOUR_NAME
+  MailDefaultReplyEmail : your_gmail_account@gmail.com
+  MailDefaultReplyName : YOUR_NAME
+
+# You can add your own settings (automatically available at global definition with all uppercase name)
+# for example : mail_settings become MAIL_SETTINGS global variable
+# or
+
+# Separated settings file to load, settings_name: yaml_settings_file_name
+load_settings :
+  route_settings : route.config.yml # Route configuration, for application path aliasing
+  database_settings : database.config.yml # Database connection configuration, multiple database supported
+
+# User login and registration mail settings
+login_settings :
+  resetpassword_mail_from_email : your_gmail_account@gmail.com
+  resetpassword_mail_from_name : YOUR_NAME
+  resetpassword_mail_subject : Request Reset Password for YOUR_WEBSITE
+  resetpassword_mail_body : <html><body><b>You are requesting password reset.</b><p>Please click following link to continue <a href='https://your-domain.com/resetpassword/_user_name/_user_password_reset_hash'>http://your-domain.com/resetpassword/_user_name/_user_password_reset_hash</a>.</p></body></html>
+  activation_mail_from_email : devteam@piapiastudio.web.id
+  activation_mail_from_name : Piapia Dev - Mailtrap
+  activation_mail_subject : User Activation for YOUR_WEBSITE
+  activation_mail_body : <html><body><b>You are registering in our website.</b><p>Please click following link to activate your account <a href='https://your-domain.com/useractivation/_registration_timestamp/_user_activation_hash'>http://your-domain.com/useractivation/_registration_timestamp/_user_activation_hash</a>.</p></body></html>

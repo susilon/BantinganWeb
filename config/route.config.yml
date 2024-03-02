@@ -1,0 +1,44 @@
+# by default framework will handle the routing based on 
+# {controller}/{action}/{parameter1}/{parameter..n} pattern
+# but you can also provide custom routing here, for example
+
+# direct path to info page, ex : https://domain.com/info
+info: # the key must be unique
+  path: /info # if there is request for /info
+  controller: home # the controller name that will handle it
+  action: info # the method that will called
+
+# direct path to login page, example of url : https://domain.com/login
+login: 
+  path: /login
+  controller: auth
+  action: login    
+
+# direct path to logout page, example of url : https://domain.com/logout
+logout: 
+  path: /logout
+  controller: auth
+  action: logout
+
+# direct path to about with parameter 'en', example of url : https://domain.com/about
+about_en: 
+  path: /about
+  controller: home 
+  action: about
+  parameter: en # parameter 'en' will always be provided for request /about
+
+# direct path to about with parameter 'id', example of url : https://domain.com/tentang
+about_id: 
+  path: /tentang
+  controller: home 
+  action: about
+  parameter: id # parameter 'id' will always be provided for request /tentang
+
+# namespace are using if you are using sub directory under controllers directory
+# for example, controller directory is : controllers/UserManagement
+# note the case is sensitive especially for linux based servers
+# example of url : https://domain.com/users/{controller}/{action}/{parameter1}/{parameter..n}
+usermanagement:
+  path: /users # for every request under /users path
+  namespace: UserManagement # will be handled by controllers under this namespace
+  wildcard: true # enable any parameter pattern

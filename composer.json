@@ -1,0 +1,13 @@
+{
+	"name": "susilon/tokyocentral-dm2",
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/susilon/bantingan.git"
+		}
+	],
+	"require": {
+		"susilon/bantingan": "dev-main"		
+	},
+	"minimum-stability": "dev"
+}

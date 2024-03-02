@@ -1,0 +1,16 @@
+# default database
+default: 
+  type: mysql
+  server: localhost
+  user: root
+  password: root
+  database: demodb
+
+## you can add mulitple database
+## user management
+#usermanagement: 
+#  type: mysql
+#  server: localhost
+#  user: root
+#  password: root
+#  database: userdb
